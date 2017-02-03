@@ -1,5 +1,6 @@
 package edu.umn.d.umdcs4531.labsimpleandroidmvp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -29,6 +30,11 @@ public class MainActivity extends AppCompatActivity
 
         // Provide this information to the Presenter
         mPresenter.clickCalcMPG(gallonsEditText, prevOdometerText, currOdometerText);
+    }
+
+    public void onClickSwitchView(View view) {
+        Intent intent = new Intent(this, DifferentView.class);
+        startActivity(intent);
     }
 
     public void setupModelViewPresenterComponents() {
